@@ -1,0 +1,44 @@
+"""
+CS5001 Section 1 Fall 2023
+Final Project - MasterMind Design 
+Hui Juhn Kim
+
+-------------------------------------------------------------------------------
+"""
+
+The structure of Mastermind consists of three stages: setup, guess, and check. 
+
+1. Setup
+	This is where you prepare all necessary elements of the game before 
+    starting the game. Functions regarding logging, turtle shapes, and secret 
+    code fall into this category. Also, this stage is when you instantiate all 
+    Circle class objects, which is similar to Marble class in the starter code.
+
+2. Guess
+	Guessing stage starts from Circle objects being able to detect wthether 
+    they have been clicked. I programmed a class method called is_clicked() 
+    which returns a boolean data; true if the coordinates of an on-click event 
+    occurred within a Circle object (technically, the area of a square 
+    surrounding the Circle object) and false if else. A function called 
+    pass_click() in mastermind_game.py determines which type of button was 
+    clicked and returns to related follow-up functions. 
+	Variable ‘attempts’ is a nested list containing Circle objects; 
+    attempt[0][0] is the first Circle object of the first attempt out of 10. 
+    attempt[9][3] is the last Circle of the last attempt. When colored buttons 
+    are clicked, the color of a Circle in attempt changes and the ‘tag’ 
+    attribute changes to ‘filled’. When the last Circle of an attempt is 
+    tagged ‘filled’, the player now then can press check.
+    
+3. Check
+	function click_check() iterates through attempt and secret_code. 
+    If the color and index matches, the color of peg changes to black. 
+    If color matches but index do not, peg color changes to red. 
+    Then pegs are sorted with selection sort (wanted to try this out when I 
+    learned it in CS5002) and finally drawn on the screen. If the number of 
+    attempt was 9 and the pegs were not all black, screen displays loss. 
+    If player wins player_wins() function is called, which updates the 
+    leaderboard and displays visual cue. update_leaderboard() temporarily 
+    stores text data in a list, creates new_leaderboard with current players 
+    score as its first element, and then iterates through old_leaderboard and 
+    performs an insertion sort. (wanted to try this as well) The leaderboard 
+    stores maximum 3 players.  
