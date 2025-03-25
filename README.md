@@ -24,5 +24,5 @@ Lower scores/fewer guesses are better.
 Our scoring pegs will be red for cows and black for bulls.
 
 ## Questions?
-IF you have any questions or issues that need to be brought up, don't hesitate to reach me out at kim.huijuhn@gmail.com :)
+IF you have any questions or issues that need to be brought up, don't hesitate to reach me out at huijuhnkim.dev@gmail.com :)
 
